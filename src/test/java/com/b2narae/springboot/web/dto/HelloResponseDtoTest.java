@@ -1,5 +1,4 @@
-package com.b2narae.springboot.dto;
-import com.b2narae.springboot.web.dto.HelloResponseDto;
+package com.b2narae.springboot.web.dto;
 import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 

@@ -1,4 +1,4 @@
-package com.b2narae.springboot;
+package com.b2narae.springboot.web;
 import com.b2narae.springboot.web.HelloController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,7 +12,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(controllers = HelloController.class)
+@WebMvcTest(controllers = HelloController.class) // JPA 미지원
 public class HelloControllerTest {
     @Autowired
     private MockMvc mvc;
