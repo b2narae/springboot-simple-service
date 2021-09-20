@@ -30,7 +30,15 @@ public class PostsService {
 
         return id;
     }
+    // update에 DB에 쿼리를 날리는 부분이 없는 이유
+    // JPA의 영속성 컨텍스트 (엔티티를 영구 저장하는 환경) 때문
+    // JPA의 핵심 내용은 Entity가 영속성 컨텍스트에 포함되어 있느냐, 아니냐로 갈림
 
+    // JPA의 엔티티 매니저가 활성화된 상태로 트랜잭션 안에서 DB에서 데이터를 가져오면,
+    // 이 데이터는 영속성 컨텍스트가 유지된 상태임
+
+    // 이 상태에서 해당 데이터의 값을 변경하면, 트랜잭션이 끝나는 시점에 해당 테이블에 변경분을 반영함
+    // Entity의 객체 값만 변경하면 별도로 update 쿼리를 날릴 필요가 없음 (Dirty Checking 개념)
     public PostsResponseDto findById (Long id) {
         Posts entity = postsRepository.findById(id)
                 .orElseThrow(() -> new
