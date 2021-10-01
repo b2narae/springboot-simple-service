@@ -26,7 +26,7 @@ public class OAuthAttributes {
         this.picture = picture;
     }
 
-    public static OAuthAttributes of (String registrationId,
+    public static OAuthAttributes of(String registrationId,
                                       String userNameAttributeName,
                                       Map<String, Object> attributes) {
         if ("naver".equals(registrationId)) {
@@ -46,7 +46,7 @@ public class OAuthAttributes {
                 .build();
     }
 
-    private static OAuthAttributes ofNaver (String userNameAttributename,
+    private static OAuthAttributes ofNaver(String userNameAttributeName,
                                             Map<String, Object> attributes) {
         Map<String, Object> response = (Map<String, Object>) attributes.get("response");
 
@@ -55,7 +55,7 @@ public class OAuthAttributes {
                 .email((String) response.get("email"))
                 .picture((String) response.get("profile_image"))
                 .attributes(response)
-                .nameAttributeKey(userNameAttributename)
+                .nameAttributeKey(userNameAttributeName)
                 .build();
     }
 
