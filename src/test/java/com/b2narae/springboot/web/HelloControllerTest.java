@@ -15,12 +15,25 @@ import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+/*
+@RunWith(SpringRunner.class)
+JUnit 내장 실행자 대신 SpringRunner라는 스프링 실행자 사용
+SpringBoot Test와 JUnit 사이의 연결자 역할
+
+@WebMvcTest
+Web(Spring MVC)에 집중할 수 있는 어노테이션
+사용 가능 : @Controller, @ControllerAdvice
+사용 불가 : @Service, @Component, @Repository
+ */
+
 @RunWith(SpringRunner.class)
 @WebMvcTest(controllers = HelloController.class,
         excludeFilters = {
         @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = SecurityConfig.class)
         }) // JPA 미지원
 public class HelloControllerTest {
+
+    // MockMvc : Web API 테스트시 사용
     @Autowired
     private MockMvc mvc;
 
@@ -29,6 +42,8 @@ public class HelloControllerTest {
     public void hello_must_be_returned() throws Exception {
         String hello = "hello";
 
+        // MockMvc를 통해 Http get 메소드 실행 가능
+        // .andExpect를 통해 검증 가능
         mvc.perform(get("/hello"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(hello));
