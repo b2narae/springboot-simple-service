@@ -14,6 +14,12 @@ public class HelloResponseDtoTest {
         HelloResponseDto dto = new HelloResponseDto(name, amount);
 
         // then - getter setter 테스트
+        /*
+        Please note that I use assertThat of assertj instead of Junit
+        It's because
+        1) assertj doesn't need additional library such as CoreMatchers
+        2) autocomplete is more comfortable in assertj
+         */
         assertThat(dto.getName()).isEqualTo(name);
         assertThat(dto.getAmount()).isEqualTo(amount);
     }
