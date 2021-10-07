@@ -12,14 +12,14 @@ import javax.persistence.Id;
 
 @Getter
 @NoArgsConstructor
-@Entity
+@Entity // Table과 링크될 클래스를 표현, BaseTimeEntity = base_time_entity
 public class Posts extends BaseTimeEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id // PK Field
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // SpringBoot 2.0 vs 1.5
     private Long id;
 
-    @Column(length = 500, nullable = false)
+    @Column(length = 500, nullable = false) // 변경이 필요한 경우 Column을 줌
     private String title;
 
     @Column(columnDefinition = "TEXT", nullable = false)
