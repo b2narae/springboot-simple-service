@@ -19,6 +19,10 @@ public class PostsRepositoryTest {
     @Autowired
     PostsRepository postsRepository;
 
+    /*
+    JUnit에서 단위 테스트가 끝날 때 수행되는 메소드 지정
+    전체 테스트시 테스트간 데이터 침범을 막기 위한 postsRepository.deleteAll() 수행
+     */
     @After
     public void cleanup() {
         postsRepository.deleteAll();
