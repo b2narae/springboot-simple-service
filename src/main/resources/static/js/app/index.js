@@ -26,7 +26,7 @@ var main = {
             data: JSON.stringify(data)
         }).done(function() {
             alert('글이 등록되었습니다.');
-            window.location.href = '/';
+            window.location.href = '/'; // 등록 성공 후 메인페이지로 이동
         }).fail(function(error) {
             alert(JSON.stringify(error));
         });

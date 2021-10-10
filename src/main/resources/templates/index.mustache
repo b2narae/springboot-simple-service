@@ -1,4 +1,5 @@
 {{>layout/header}}
+<!-- 현재 머스테치 파일을 기준으로 다른 파일을 가져옴 -->
     <h1>비나래의 웹 서비스</h1>
     <div class="col-md-12">
         <!-- 로그인 -->
@@ -32,8 +33,10 @@
             </tr>
             </thead>
             <tbody id="tbody">
+            <!-- posts List 순회 -->
             {{#posts}}
                 <tr>
+                    <!-- List에서 뽑아낸 객체의 field를 사용-->
                     <td>{{id}}</td>
                     <td><a href="/posts/update/{{id}}">{{title}}</a></td>
                     <td>{{author}}</td>
