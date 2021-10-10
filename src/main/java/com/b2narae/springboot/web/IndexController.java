@@ -21,6 +21,7 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
+        // Model에 posts Attribute 를 담아서, index.mustache에 넘김.
         model.addAttribute("posts", postsService.findAllDesc());
         // SessionUser user = (SessionUser) httpSession.getAttribute("user");
 
