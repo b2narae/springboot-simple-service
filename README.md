@@ -18,7 +18,10 @@
 * OAuth 2.0 : 구글 및 네이버 로그인
 
 ## Architecture
-> 
+
+* Class Diagram
+
+  ![class_diagram_springboot-simple-service drawio](https://user-images.githubusercontent.com/37679254/136824798-dd92a3e7-fd2b-49bf-87ad-5f87302b4736.png)
 
 ## Author
 👤 **taekhwan.kim**
