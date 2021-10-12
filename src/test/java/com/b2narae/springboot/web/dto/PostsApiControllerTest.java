@@ -48,6 +48,10 @@ public class PostsApiControllerTest {
 
     private MockMvc mvc;
 
+    /*
+    Creating MockMvc Instance
+    @Before every test.
+     */
     @Before
     public void setup() {
         mvc = MockMvcBuilders
