@@ -5,6 +5,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+// Customized Bean 만드는 방법
 @Target(ElementType.PARAMETER) // annotation이 생성될 수 있는 위치 지정
 @Retention(RetentionPolicy.RUNTIME)
 public @interface LoginUser {   // LoginUser라는 이름의 어노테이션 생성
