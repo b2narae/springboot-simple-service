@@ -58,6 +58,7 @@ public class PostsService {
                 .collect(Collectors.toList());
     }
 
+    // Transactional의 동작 과정
     @Transactional
     public void delete(Long id) {
         Posts posts = postsRepository.findById(id)
