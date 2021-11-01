@@ -44,6 +44,7 @@ public class HelloControllerTest {
 
         // MockMvc를 통해 Http get 메소드 실행 가능
         // .andExpect를 통해 검증 가능
+        // status().isOk() : 200인지 아닌지 검증
         mvc.perform(get("/hello"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(hello));
@@ -56,7 +57,7 @@ public class HelloControllerTest {
         int amount = 1000;
 
         mvc.perform(get("/hello/dto")
-                                .param("name", name)
+                                .param("name", name) // API 테스트 때 사용될 요청 파라미터 설정
                                 .param("amount", String.valueOf(amount)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name", is(name)))
